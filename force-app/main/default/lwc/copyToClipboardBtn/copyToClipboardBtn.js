@@ -1,6 +1,6 @@
 /**
- * This component is an example of how to use the copyTextToClipboard js component
- * to copy any text in the clipboard.
+ * This component shows how to use the copyTextToClipboard js component
+ * to copy any given text to the user's clipboard.
  */
 
 import { LightningElement } from 'lwc';
@@ -14,6 +14,6 @@ export default class CopyToClipboardBtn extends LightningElement {
 	}
 
 	handleTextAreaChange(event) {
-        this._textAreaContent = event.target.value;
-    }
+		this._textAreaContent = event.target.value;
+	}
 }
