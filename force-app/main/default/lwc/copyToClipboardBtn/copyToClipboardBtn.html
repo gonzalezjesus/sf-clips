@@ -1,0 +1,23 @@
+<template>
+	<lightning-layout>
+		<lightning-layout-item padding="around-small">
+			<lightning-textarea 
+				name="textArea" 
+				label="Text to copy" 
+				placeholder="Enter some text..."
+				onchange={handleTextAreaChange}
+			></lightning-textarea>
+		</lightning-layout-item>
+	</lightning-layout>
+	<lightning-layout>
+		<lightning-layout-item padding="around-small">
+			<lightning-button 
+				label="Copy Text" 
+				title="Copy Text to Clipboard" 
+				icon-name="utility:copy"
+				variant="brand"
+				onclick={handleClick}
+			></lightning-button>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>
