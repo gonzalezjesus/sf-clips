@@ -5,12 +5,20 @@
 
 import { LightningElement } from 'lwc';
 import { copyTextToClipboard } from 'c/copyTextToClipboard';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class CopyToClipboardBtn extends LightningElement {
 	_textAreaContent;
 
 	handleClick() {
-		copyTextToClipboard(!this._textAreaContent ? 'Type some text in the text area field...' : this._textAreaContent);
+		copyTextToClipboard(this._textAreaContent || 'Type some text in the text area field...');
+
+		const event = new ShowToastEvent({
+			title: 'Text copied',
+			message: 'Text copied to the clipboard!',
+			variant: 'success'
+		});
+		this.dispatchEvent(event);
 	}
 
 	handleTextAreaChange(event) {
